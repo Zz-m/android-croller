@@ -9,7 +9,7 @@
 Just add the following dependency in your app's `build.gradle`
 ```groovy
 dependencies {
-      compile 'com.sdsmdg.harjot:croller:1.0.7'
+    implementation 'cn.denghanxi:android-croller:1.0.0'
 }
 ```
 
