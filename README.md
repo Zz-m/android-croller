@@ -1,3 +1,5 @@
+# As ``jCenter`` is not available now(2023) and the original project is not updated. So I fork and republish it to maven central.
+
 <img src = "/screens/croller_cover.png"><br>
 [![Platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
