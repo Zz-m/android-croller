@@ -79,6 +79,14 @@ Croller croller.setOnCrollerChangeListener(new OnCrollerChangeListener() {
         });
 ```
 
+#### Another progress change listener(if you want to know whether the value is from the user.)
+```java
+Croller croller = (Croller) findViewById(R.id.croller);
+croller.setOnValueChangedListener((v, fromUser) -> {
+    // use the value and you can check if the value is set by user.
+});
+```
+
 # Attributes
 
 <img src = "/screens/croller_attributes.png"><br>

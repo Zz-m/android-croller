@@ -71,15 +71,24 @@ public class Croller extends View {
 
     RectF oval;
 
-    private onProgressChangedListener mProgressChangeListener;
+    private OnProgressChangedListener mProgressChangeListener;
+    private OnValueChangedListener mValueChangedListener;
     private OnCrollerChangeListener mCrollerChangeListener;
 
-    public interface onProgressChangedListener {
+    public interface OnProgressChangedListener {
         void onProgressChanged(int progress);
     }
 
-    public void setOnProgressChangedListener(onProgressChangedListener mProgressChangeListener) {
+    public interface OnValueChangedListener {
+        void onProgressChanged(int value, boolean fromUser);
+    }
+
+    public void setOnProgressChangedListener(OnProgressChangedListener mProgressChangeListener) {
         this.mProgressChangeListener = mProgressChangeListener;
+    }
+
+    public void setOnValueChangedListener(OnValueChangedListener listener) {
+        this.mValueChangedListener = listener;
     }
 
     public void setOnCrollerChangeListener(OnCrollerChangeListener mCrollerChangeListener) {
@@ -517,6 +526,9 @@ public class Croller extends View {
                 mCrollerChangeListener.onStopTrackingTouch(this);
                 startEventSent = false;
             }
+            if (mValueChangedListener != null) {
+                mValueChangedListener.onProgressChanged((int) (deg - 2), true);
+            }
             return true;
         }
         return super.onTouchEvent(e);
@@ -545,6 +557,9 @@ public class Croller extends View {
 
     public void setProgress(int x) {
         deg = x + 2;
+        if (mValueChangedListener != null) {
+            mValueChangedListener.onProgressChanged((int) (deg - 2), false);
+        }
         invalidate();
     }
 
