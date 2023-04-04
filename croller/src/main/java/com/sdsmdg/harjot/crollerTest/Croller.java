@@ -446,7 +446,8 @@ public class Croller extends View {
                 mCrollerChangeListener.onStopTrackingTouch(this);
                 startEventSent = false;
             }
-            return super.onTouchEvent(e);
+            //comment this, the croller will response event outside the MainCircle.
+            //return super.onTouchEvent(e);
         }
 
         if (e.getAction() == MotionEvent.ACTION_DOWN) {

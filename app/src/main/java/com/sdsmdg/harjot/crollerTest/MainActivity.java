@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         croller.setOnCrollerChangeListener(new OnCrollerChangeListener() {
             @Override
             public void onProgressChanged(Croller croller, int progress) {
-
+//                Log.d(MainActivity.class.getName(), "Progress croller: " + progress );
             }
 
             @Override
